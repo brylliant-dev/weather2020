@@ -41,6 +41,7 @@ $(document).ready(function () {
             // Show preloader
             $(".preloader").fadeIn("fast");
             fetchData(clickedLat, clickedLong, "tmax", temperatureUnit);
+            $("#calendar-title").text("3-Months Ahead Forecast (High)");
             map.addSource("user-location", {
               type: "geojson",
               data: {
@@ -118,6 +119,7 @@ $(document).ready(function () {
             // Show preloader
             $(".preloader").fadeIn("fast");
             fetchData(defaultLat, defaultLon, "tmax", temperatureUnit);
+            $("#calendar-title").text("3-Months Ahead Forecast (High)");
     
             map.addSource("default-location", {
               type: "geojson",
@@ -181,6 +183,7 @@ $(document).ready(function () {
               clickedLong = defaultLon;
               $(".preloader").fadeIn("fast");
               fetchData(defaultLat, defaultLon, "tmax", temperatureUnit);
+              $("#calendar-title").text("3-Months Ahead Forecast (High)");
             });
           },
           {
@@ -227,6 +230,7 @@ $(document).ready(function () {
         // Show preloader
         $(".preloader").fadeIn("fast");
         fetchData(clickedLat, clickedLong, "tmax", temperatureUnit);
+        $("#calendar-title").text("3-Months Ahead Forecast (High)");
       });
     
       map.on("click", function (e) {
@@ -251,6 +255,7 @@ $(document).ready(function () {
     
           $(".preloader").fadeIn("fast");
           fetchData(clickedLat, clickedLong, "tmax", temperatureUnit);
+          $("#calendar-title").text("3-Months Ahead Forecast (High)");
           map.addSource("clicked-location", {
             type: "geojson",
             data: {
@@ -377,6 +382,7 @@ $(document).ready(function () {
         // Show preloader
         $(".preloader").fadeIn("fast");
         fetchData(clickedLat, clickedLong, "tmax", temperatureUnit);
+        $("#calendar-title").text("3-Months Ahead Forecast (High)");
       });
     
       // ====================Weather API Code / Calendar Code ===================================== //
@@ -478,14 +484,19 @@ $(document).ready(function () {
     
         if (currentDataType === "tmax") {
           fetchData(clickedLat, clickedLong, "tmax", temperatureUnit);
+          $("#calendar-title").text("3-Months Ahead Forecast (High)");
         } else if (currentDataType === "tmin") {
           fetchData(clickedLat, clickedLong, "tmin", temperatureUnit);
+          $("#calendar-title").text("3-Months Ahead Forecast (Low)");
         } else if (currentDataType === "snow") {
           fetchData(clickedLat, clickedLong, "snow", temperatureUnit);
+          $("#calendar-title").text("3-Months Ahead Forecast (Snow)");
         } else if (currentDataType === "prcp") {
           fetchData(clickedLat, clickedLong, "prcp", temperatureUnit);
+          $("#calendar-title").text("3-Months Ahead Forecast (Prcp)");
         } else {
           fetchData(clickedLat, clickedLong, "tmax", temperatureUnit);
+          $("#calendar-title").text("3-Months Ahead Forecast (High)");
         }
       };
     
