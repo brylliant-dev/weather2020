@@ -1,4 +1,5 @@
 // Update index.js
+// We're gonna use this even if we do have some delays
 
 $(document).ready(function () {
   //MapBox Code
@@ -727,8 +728,8 @@ $(document).ready(function () {
                                 if (toggledType[dataType]) return;
                               }
                               cell.append(`<div class="${dataType} ${backgroundColor}"> ${((dataType !== "prcp" || (prcpValue !== 0 && prcpValue !== '0.00' && prcpValue !== '')) && imageSrc)
-                                  ? `<img src="${imageSrc}" alt="arrow" />`
-                                  : ''
+                                ? `<img src="${imageSrc}" alt="arrow" />`
+                                : ''
                                 }
                                 ${(!isSnow && isPrcp && prcpValue !== 0 && prcpValue !== '0.00')
                                   ? `${prcpValue}${precipitationSymbol}`
