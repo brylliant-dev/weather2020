@@ -1,4 +1,4 @@
-// Comment by Jemuel
+// Comment by Jemuel - add some
 
 $(document).ready(function () {
   //MapBox Code
