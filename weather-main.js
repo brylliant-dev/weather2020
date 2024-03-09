@@ -1,5 +1,7 @@
+// Comment by Jemuel
+
 $(document).ready(function () {
-//MapBox Code
+  //MapBox Code
   mapboxgl.accessToken =
     "pk.eyJ1Ijoid2VhdGhlcjIwMjBsbGMiLCJhIjoiY2xuOTNuMmtxMDI3cTJqbWdmM2h6d2theSJ9.sLvJwJQsMxtNl-dH0tew7A";
 
@@ -338,31 +340,31 @@ $(document).ready(function () {
 
   // ====================Weather API Code / Calendar Code ===================================== //
 
-	
 
-const currentDate = new Date();
-const currentYear = currentDate.getUTCFullYear(); // Use getUTCFullYear() for UTC year
-const currentMonth = currentDate.getUTCMonth() + 1; // Use getUTCMonth() for UTC month
-const targetMonth =
-  currentMonth + 3 > 12 ? currentMonth - 9 : currentMonth + 3;
-const yearForTargetMonth =
-  currentMonth + 3 > 12 ? currentYear + 1 : currentYear;
-const startDay = new Date(yearForTargetMonth, targetMonth - 1, 1);
-const endDay = new Date(yearForTargetMonth, targetMonth, 1);
-const apiKey = "4a104dda79281ab49bc8dd46a25674e5";
-const svgLinks = {
-  tmax: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/6548a55e7c01e0d4ecce25dd_arrow_outward.svg",
-  tmin: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/6548b7f1267ff6e0910d0cdc_arrow_downward2.svg",
-  snow: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/654b48fd58d06fc04317d43f_ac_unit.svg",
-  prcp: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/655ecbeeba9dcaecec6bbc7f_icon-precipitation-light-blue.svg",
-};
 
-const formatDate = (date) => {
-  const year = date.getUTCFullYear(); // Use getUTCFullYear() for UTC year
-  const month = (date.getUTCMonth() + 1).toString().padStart(2, "0"); // Use getUTCMonth() for UTC month
-  const day = date.getUTCDate().toString().padStart(2, "0"); // Use getUTCDate() for UTC day
-  return `${year}-${month}-${day}`;
-};
+  const currentDate = new Date();
+  const currentYear = currentDate.getUTCFullYear(); // Use getUTCFullYear() for UTC year
+  const currentMonth = currentDate.getUTCMonth() + 1; // Use getUTCMonth() for UTC month
+  const targetMonth =
+    currentMonth + 3 > 12 ? currentMonth - 9 : currentMonth + 3;
+  const yearForTargetMonth =
+    currentMonth + 3 > 12 ? currentYear + 1 : currentYear;
+  const startDay = new Date(yearForTargetMonth, targetMonth - 1, 1);
+  const endDay = new Date(yearForTargetMonth, targetMonth, 1);
+  const apiKey = "4a104dda79281ab49bc8dd46a25674e5";
+  const svgLinks = {
+    tmax: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/6548a55e7c01e0d4ecce25dd_arrow_outward.svg",
+    tmin: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/6548b7f1267ff6e0910d0cdc_arrow_downward2.svg",
+    snow: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/654b48fd58d06fc04317d43f_ac_unit.svg",
+    prcp: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/655ecbeeba9dcaecec6bbc7f_icon-precipitation-light-blue.svg",
+  };
+
+  const formatDate = (date) => {
+    const year = date.getUTCFullYear(); // Use getUTCFullYear() for UTC year
+    const month = (date.getUTCMonth() + 1).toString().padStart(2, "0"); // Use getUTCMonth() for UTC month
+    const day = date.getUTCDate().toString().padStart(2, "0"); // Use getUTCDate() for UTC day
+    return `${year}-${month}-${day}`;
+  };
 
   const getNormalsData = async (lat, lon, month, year) => {
     // Determine the units based on the temperatureUnit parameter
@@ -457,17 +459,17 @@ const formatDate = (date) => {
             $(".preloader").fadeOut("fast");
             const monthsData = {};
 
-     data.forEach((item) => {
-                        const date = new Date(item.date);
-                        const year = date.getUTCFullYear(); // Using getUTCFullYear() for UTC year
-                        const month = date.getUTCMonth() + 1; // Using getUTCMonth() for UTC month
+            data.forEach((item) => {
+              const date = new Date(item.date);
+              const year = date.getUTCFullYear(); // Using getUTCFullYear() for UTC year
+              const month = date.getUTCMonth() + 1; // Using getUTCMonth() for UTC month
 
-                        const key = `${year}-${String(month).padStart(2, "0")}`;
-                        if (!monthsData[key]) {
-                            monthsData[key] = [];
-                        }
-                        monthsData[key].push({
-                            day: date.getUTCDate(),
+              const key = `${year}-${String(month).padStart(2, "0")}`;
+              if (!monthsData[key]) {
+                monthsData[key] = [];
+              }
+              monthsData[key].push({
+                day: date.getUTCDate(),
                 tmax: item.tmax,
                 tmin: item.tmin,
                 snow: item.snow,
@@ -504,14 +506,14 @@ const formatDate = (date) => {
                     `<thead>
                           <tr><th colspan="${daysLength}">${monthName} ${year}</th></tr>
                           <tr>${calendarDays
-                            .map((d) => `<th>${d}</th>`)
-                            .join("")}</tr>
+                      .map((d) => `<th>${d}</th>`)
+                      .join("")}</tr>
                         </thead>`,
                   );
 
-              const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate(); // Using Date.UTC() and getUTCDate() for UTC days in a month
-const firstDay = new Date(Date.UTC(year, month - 1, 1)).getUTCDay(); // Using Date.UTC() and getUTCDay() for UTC day of the week
-let dateCounter = 1; // No change needed for dateCounter
+                  const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate(); // Using Date.UTC() and getUTCDate() for UTC days in a month
+                  const firstDay = new Date(Date.UTC(year, month - 1, 1)).getUTCDay(); // Using Date.UTC() and getUTCDay() for UTC day of the week
+                  let dateCounter = 1; // No change needed for dateCounter
 
 
                   const tbody = $("<tbody></tbody>");
@@ -601,7 +603,7 @@ let dateCounter = 1; // No change needed for dateCounter
                               // If snow value has 2 or more decimal places, multiply by 10
                               snowValue =
                                 snowValue % 1 !== 0 &&
-                                snowValue.toString().split(".")[1].length >= 2
+                                  snowValue.toString().split(".")[1].length >= 2
                                   ? snowValue * 10
                                   : snowValue;
 
@@ -626,18 +628,16 @@ let dateCounter = 1; // No change needed for dateCounter
 
                                 if (toggledType[dataType]) return;
                               }
-                              cell.append(`<div class="${dataType} ${backgroundColor}"> ${
-                                imageSrc &&
+                              cell.append(`<div class="${dataType} ${backgroundColor}"> ${imageSrc &&
                                 item[dataType] !== 0 &&
                                 `<img src="${imageSrc}" alt="arrow" />`
-                              }
-    ${
-      !isSnow && isPrcp
-        ? `${prcpValue}${precipitationSymbol}`
-        : !isSnow && !isPrcp
-        ? `${temperatureValue}${temperatureSymbol}`
-        : `${snowValue}${isPrcp ? precipitationSymbol : ""}`
-    }
+                                }
+    ${!isSnow && isPrcp
+                                  ? `${prcpValue}${precipitationSymbol}`
+                                  : !isSnow && !isPrcp
+                                    ? `${temperatureValue}${temperatureSymbol}`
+                                    : `${snowValue}${isPrcp ? precipitationSymbol : ""}`
+                                }
     </div>`);
                             }
                           });
@@ -649,8 +649,8 @@ let dateCounter = 1; // No change needed for dateCounter
                       i === 0 && j < firstDay
                         ? row.append("<td></td>")
                         : dateCounter <= daysInMonth
-                        ? updateBg()
-                        : row.append("<td></td>");
+                          ? updateBg()
+                          : row.append("<td></td>");
                     }
                     tbody.append(row);
                     if (dateCounter > daysInMonth) break;
