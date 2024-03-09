@@ -18,8 +18,6 @@ $(document).ready(function () {
   let clickedLocationMarkerAdded = false;
   let isToggled;
 
-  console.log('--openPopup', openPopup)
-
   var map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/satellite-streets-v12",
