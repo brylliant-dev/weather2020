@@ -1,5 +1,6 @@
 // Update index.js
 // We're gonna use this even if we do have some delays
+// Let's see if we'll have some delays
 
 $(document).ready(function () {
   //MapBox Code
