@@ -404,7 +404,7 @@ $(document).ready(function () {
     currentMonth + 3 > 12 ? currentYear + 1 : currentYear;
   const startDay = new Date(yearForTargetMonth, targetMonth - 1, 1);
   const endDay = new Date(yearForTargetMonth, targetMonth, 1 + 1);
-  const apiKey = "4a104dda79281ab49bc8dd46a25674e5";
+  const apiKey = process.env.WEATHER_API_KEY;
   const svgLinks = {
     tmax: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/6548a55e7c01e0d4ecce25dd_arrow_outward.svg",
     tmin: "https://uploads-ssl.webflow.com/653b0216cc0c5e60418f5f63/6548b7f1267ff6e0910d0cdc_arrow_downward2.svg",
