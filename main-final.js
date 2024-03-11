@@ -837,8 +837,8 @@ $(document).ready(function () {
                                     return (item[dataType] === 0 || item[
                                         dataType] === null) ?
                                       "transparent" :
-                                      (prcpResult > prcpValueNormals &&
-                                        prcpResult >= 1.27 ?
+                                      (item[dataType] > prcpResult &&
+                                        item[dataType] >= 1.27 ?
                                         "prcp-background" : "transparent");
                                   }
                                 } else {
@@ -852,8 +852,8 @@ $(document).ready(function () {
                                     return (item[dataType] === 0 || item[
                                         dataType] === null) ?
                                       "transparent" :
-                                      (prcpResult > prcpValueNormals &&
-                                        prcpResult >= 0.05 ?
+                                      (item[dataType] > prcpResult &&
+                                        item[dataType] >= 0.05 ?
                                         "prcp-background" : "transparent");
                                   }
                                 }
