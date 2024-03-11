@@ -460,7 +460,10 @@ $(document).ready(function () {
   };
 
   // Get the current UTC date
-  var currentDate = getCurrentUTCDate();
+  //var currentDate = getCurrentUTCDate();
+  var currentDate = new Date();
+// Add 3 months to the current date
+  currentDate.setMonth(currentDate.getMonth() + 3);
   var currentMonth = currentDate.getUTCMonth() + 1;
 
   // Function to get the next month, considering timezone offset
