@@ -40,7 +40,7 @@ $(document).ready(function () {
         longitude = position.coords.longitude;
         clickedLong = longitude;
         clickedLat = latitude;
-        $("#calendar-title").text("6-Months Ahead Forecast (High)");
+        $("#calendar-title").text("15-days Forecast (High)");
         // Show preloader
         $(".preloader").fadeIn("fast");
         fetchData(
@@ -131,7 +131,7 @@ $(document).ready(function () {
         console.error("Error getting location:", error.message);
         clickedLat = defaultLat;
         clickedLong = defaultLon;
-        $("#calendar-title").text("6-Months Ahead Forecast (High)");
+        $("#calendar-title").text("15-days Forecast (High)");
         // Show preloader
         $(".preloader").fadeIn("fast");
         fetchData(
@@ -203,7 +203,7 @@ $(document).ready(function () {
         map.on("click", "default-location-marker", function (e) {
           clickedLat = defaultLat;
           clickedLong = defaultLon;
-          $("#calendar-title").text("6-Months Ahead Forecast (High)");
+          $("#calendar-title").text("15-days Forecast (High)");
           $(".preloader").fadeIn("fast");
           document.getElementById("getLocation").innerHTML = OrginalUserLocation;
           fetchData(
@@ -254,7 +254,7 @@ $(document).ready(function () {
   map.on("click", "user-location-marker", function () {
     // Show preloader
     $(".preloader").fadeIn("fast");
-    $("#calendar-title").text("6-Months Ahead Forecast (High)");
+    $("#calendar-title").text("15-days Forecast (High)");
     document.getElementById("getLocation").innerHTML = OrginalUserLocation;
     fetchData(
       clickedLat,
@@ -278,7 +278,7 @@ $(document).ready(function () {
       clickedLat = coordinates[1];
       clickedLong = coordinates[0];
 
-      $("#calendar-title").text("6-Months Ahead Forecast (High)");
+      $("#calendar-title").text("15-days Forecast (High)");
       $(".preloader").fadeIn("fast");
       fetchData(
         clickedLat,
@@ -414,7 +414,7 @@ $(document).ready(function () {
     const coordinates = e.features[0].geometry.coordinates.slice();
     clickedLat = coordinates[1];
     clickedLong = coordinates[0];
-    $("#calendar-title").text("6-Months Ahead Forecast (High)");
+    $("#calendar-title").text("15-days Forecast (High)");
     // Show preloader
     $(".preloader").fadeIn("fast");
     fetchData(
@@ -560,7 +560,7 @@ $(document).ready(function () {
     targetMonth = clickedMonthIndex + 1;
     yearForTargetMonth = clickedYear;
 
-    $("#calendar-title").text("6-Months Ahead Forecast (High)");
+    $("#calendar-title").text("15-days Forecast (High)");
     $(".preloader").fadeIn("fast");
     fetchData(
       clickedLat,
@@ -649,7 +649,7 @@ $(document).ready(function () {
     $(".preloader").fadeIn("fast");
 
     if (currentDataType === "tmax") {
-      $("#calendar-title").text("6-Months Ahead Forecast (High)");
+      $("#calendar-title").text("15-days Forecast (High)");
       fetchData(
         clickedLat,
         clickedLong,
@@ -659,7 +659,7 @@ $(document).ready(function () {
         dateEnd,
       );
     } else if (currentDataType === "tmin") {
-      $("#calendar-title").text("6-Months Ahead Forecast (Low)");
+      $("#calendar-title").text("15-days Forecast (Low)");
       fetchData(
         clickedLat,
         clickedLong,
@@ -669,7 +669,7 @@ $(document).ready(function () {
         dateEnd,
       );
     } else if (currentDataType === "snow") {
-      $("#calendar-title").text("6-Months Ahead Forecast (Snow)");
+      $("#calendar-title").text("15-days Forecast (Snow)");
       fetchData(
         clickedLat,
         clickedLong,
@@ -679,7 +679,7 @@ $(document).ready(function () {
         dateEnd,
       );
     } else if (currentDataType === "prcp") {
-      $("#calendar-title").text("6-Months Ahead Forecast (PRCP)");
+      $("#calendar-title").text("15-days Forecast (PRCP)");
       fetchData(
         clickedLat,
         clickedLong,
@@ -689,7 +689,7 @@ $(document).ready(function () {
         dateEnd,
       );
     } else {
-      $("#calendar-title").text("6-Months Ahead Forecast (High)");
+      $("#calendar-title").text("15-days Forecast (High)");
       fetchData(
         clickedLat,
         clickedLong,
@@ -969,7 +969,7 @@ $(document).ready(function () {
     $(".temp-unit-wrapper.main").css("display", "flex");
     $(".legend-label.temp-unit").css("display", "block");
     $(".legend-label.prc-unit").css("display", "none");
-    $("#calendar-title").text("6-Months Ahead Forecast (High)");
+    $("#calendar-title").text("15-days Forecast (High)");
     fetchData(
       clickedLat,
       clickedLong,
@@ -990,7 +990,7 @@ $(document).ready(function () {
     $(".temp-unit-wrapper.main").css("display", "flex");
     $(".legend-label.temp-unit").css("display", "block");
     $(".legend-label.prc-unit").css("display", "none");
-    $("#calendar-title").text("6-Months Ahead Forecast (Low)");
+    $("#calendar-title").text("15-days Forecast (Low)");
     fetchData(
       clickedLat,
       clickedLong,
@@ -1011,7 +1011,7 @@ $(document).ready(function () {
     $(".temp-unit-wrapper.main").css("display", "none");
     $(".legend-label.temp-unit").css("display", "block");
     $(".legend-label.prc-unit").css("display", "none");
-    $("#calendar-title").text("6-Months Ahead Forecast (Snow)");
+    $("#calendar-title").text("15-days Forecast (Snow)");
     fetchData(
       clickedLat,
       clickedLong,
@@ -1032,7 +1032,7 @@ $(document).ready(function () {
     $(".temp-unit-wrapper.main").css("display", "flex");
     $(".legend-label.temp-unit").css("display", "none");
     $(".legend-label.prc-unit").css("display", "block");
-    $("#calendar-title").text("6-Months Ahead Forecast (PRCP)");
+    $("#calendar-title").text("15-days Forecast (PRCP)");
     fetchData(
       clickedLat,
       clickedLong,
