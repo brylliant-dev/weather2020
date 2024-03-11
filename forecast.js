@@ -823,7 +823,7 @@ function monthIndex(month) {
                                       } else if (isPrcp) {
                                         return (item[dataType] === 0 || item[dataType] === null)
                                         ? "transparent"
-                                        : (prcpResult > prcpValueNormals && prcpResult >= 1.27 ? "prcp-background" : "transparent");
+                                        : (item[dataType] > prcpResult && item[dataType] >= 1.27 ? "prcp-background" : "transparent");
                                       }
                                     } else {
                                       // Units are imperial
@@ -835,7 +835,7 @@ function monthIndex(month) {
                                       } else if (isPrcp) {
                                         return (item[dataType] === 0 || item[dataType] === null)
                                         ? "transparent"
-                                        : (prcpResult > prcpValueNormals && prcpResult >= 0.05 ? "prcp-background" : "transparent");
+                                        : (item[dataType]  > prcpResult && item[dataType] >= 0.05 ? "prcp-background" : "transparent");
                                       }
                                     }
 
