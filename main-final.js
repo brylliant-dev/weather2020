@@ -624,7 +624,7 @@ $(document).ready(function () {
                                   fr.month === month,
                                 )["prcp"]
 
-                                const prcpResult = prcpValueNormals * 2;
+                                const prcpResult = prcpValueNormals * 1.25;
 
                                 // Check if the units are metric
                                 if (units === "metric") {
