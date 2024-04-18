@@ -480,10 +480,6 @@ $(document).ready(function () {
   // Get the number of days in the month
   var numberOfDays = new Date(currentYear, currentMonth, 0).getDate();
 
-  console.log("Current Date:", currentDate);
-  console.log("Current Month:", currentMonth);
-  console.log("Current Day:", currentDay);
-  console.log("Number of days in the current month:", numberOfDays);
   // Function to get the next month, considering timezone offset
   const getNextMonth = (date) => {
     const nextMonth = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 1));
@@ -512,8 +508,6 @@ $(document).ready(function () {
     if (currentDate.getUTCMonth() === 0) {
       year--;
     }
-
-    console.log("The year is:", year);
 
     // Create a new button for each month
     var monthButton = $('<button class="btntab">');
@@ -550,7 +544,6 @@ $(document).ready(function () {
   startDate.setUTCDate(startDate.getUTCDate() + 15);
   var formattedStartDate = formatDate(startDate);
   var firstMonthStartDay = startDate.getUTCDate();
-  console.log("First Month Start Date", firstMonthStartDay);
 
   // Get the last day of the month
   var lastDayOfMonth = new Date(firstMonthYear, firstMonthIndex + 1, 0).getUTCDate();
@@ -564,9 +557,6 @@ $(document).ready(function () {
   // Display the result of startEnd and endDate with plus 15 days
   dateStart = formattedStartDate;
   dateEnd = formattedEndDate;
-
-  console.log(dateStart);
-  console.log(dateEnd);
 
   $("#months-container button:first").addClass("active");
 
